@@ -18,13 +18,15 @@ A minimalistic Discussion Board API with NodeJS, Express, Knex (sqlite), Joi and
 git clone https://github.com/danielschmitz/discussionboard-api.git
 cd discussionboard-api
 npm install
-npm run createdb
+npm run migrate
 npm run dev
 ```
 
 Go to `localhost:3000/api-docs`
 
 Atfer the installation, you can always run the server using the `npm run dev` command.
+
+Se você precisar recriar o banco de dados, delete o arquivo `dev.sqlite3` e execute novamente o comando `npm run migrate`.
 
 ## How get the Authorization Token
 
