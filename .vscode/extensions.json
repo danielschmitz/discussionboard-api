@@ -3,7 +3,6 @@
         "qwtel.sqlite-viewer",
         "esbenp.prettier-vscode",
         "eamodio.gitlens",
-        "mikestead.dotenv",
         "usernamehw.errorlens",
         "dbaeumer.vscode-eslint"
     ]
