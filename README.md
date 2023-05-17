@@ -1,6 +1,16 @@
 # Discussion Board API
 
-A minimalistic Discussion Board API with NodeJS, Express, Knex (sqlite) and Joi.
+A minimalistic Discussion Board API with NodeJS, Express, Knex (sqlite), Joi and Swagger.
+
+<details>
+  <summary>Database</summary>
+  <img src="DiscussionBoard.png">
+</details>
+
+<details>
+  <summary>Swagger</summary>
+  <img src="DiscussionBoardSwagger.png">
+</details>
 
 ## Install
 
