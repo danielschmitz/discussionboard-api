@@ -8,7 +8,6 @@ const db = require("../db")
 const UnauthorizedError = require("../errors/UnauthorizedError")
 const BadInputError = require("../errors/BadInputError")
 const NotFoundError = require("../errors/NotFoundError")
-const table = require("../constants/table")
 
 const JWT_SECRET = "47bce5c74f589f4867dbd57e9ca9f808"
 
@@ -112,7 +111,7 @@ class auth {
    * @param {*} password
    */
   async validateUser(email, password) {
-    const userDb = await db(table.users).where({ email }).first()
+    const userDb = await db("users").where({ email }).first()
     if (!userDb) {
       throw new NotFoundError("No user found with that email")
     }

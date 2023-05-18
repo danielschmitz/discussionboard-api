@@ -36,6 +36,15 @@ const doc = {
       email: "user@mail.com",
       password: "123456",
     },
+    DiscussionResult: {
+      id: 1,
+      title: "title of discussion",
+      description: "description of result",
+      votes: 10,
+      createdAt: "2023-05-17 15:33:34",
+      userId: 1,
+      userName: "Author Name",
+    },
   },
 }
 
@@ -44,6 +53,7 @@ const endpointsFiles = [
   "./src/api/hello-world.js",
   "./src/api/auth.js",
   "./src/api/user.js",
+  "./src/api/discussion.js",
 ]
 
 swaggerAutogen(outputFile, endpointsFiles, doc)

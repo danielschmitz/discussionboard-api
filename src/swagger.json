@@ -356,6 +356,30 @@
           }
         }
       }
+    },
+    "/discussions": {
+      "get": {
+        "tags": [
+          "Discussions"
+        ],
+        "summary": "Get All Discussions",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of discussions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DiscussionResult"
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -394,6 +418,39 @@
         "password": {
           "type": "string",
           "example": "123456"
+        }
+      }
+    },
+    "DiscussionResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "title": {
+          "type": "string",
+          "example": "title of discussion"
+        },
+        "description": {
+          "type": "string",
+          "example": "description of result"
+        },
+        "votes": {
+          "type": "number",
+          "example": 10
+        },
+        "createdAt": {
+          "type": "number",
+          "example": 1657362669000
+        },
+        "userId": {
+          "type": "number",
+          "example": 1
+        },
+        "userName": {
+          "type": "string",
+          "example": "Author Name"
         }
       }
     }
