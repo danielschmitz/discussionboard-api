@@ -5,7 +5,7 @@ const NotFoundError = require("../errors/NotFoundError")
 const Joi = require("joi")
 const bcrypt = require("bcrypt")
 
-const auth = require("../services/auth")
+const auth = require("../auth")
 
 const userSchema = Joi.object({
   name: Joi.string().min(3).max(30).required(),

@@ -4,10 +4,10 @@ const jwt = require("jsonwebtoken")
 const Joi = require("joi")
 const bcrypt = require("bcrypt")
 const jsonwebtoken = require("jsonwebtoken")
-const db = require("../db")
-const UnauthorizedError = require("../errors/UnauthorizedError")
-const BadInputError = require("../errors/BadInputError")
-const NotFoundError = require("../errors/NotFoundError")
+const db = require("./db")
+const UnauthorizedError = require("./errors/UnauthorizedError")
+const BadInputError = require("./errors/BadInputError")
+const NotFoundError = require("./errors/NotFoundError")
 
 const JWT_SECRET = "47bce5c74f589f4867dbd57e9ca9f808"
 
@@ -86,6 +86,7 @@ class auth {
   getTokenData = (req) => ({
     id: req.auth.id,
     email: req.auth.email,
+    isAdmin: req.auth.isAdmin,
   })
 
   /**

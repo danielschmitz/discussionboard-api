@@ -380,6 +380,76 @@
           }
         }
       }
+    },
+    "/discussion/{id}": {
+      "get": {
+        "tags": [
+          "Discussions"
+        ],
+        "summary": "Get a Discussion",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A discussion by id",
+            "schema": {
+              "$ref": "#/definitions/DiscussionResult"
+            }
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/discussion": {
+      "post": {
+        "tags": [
+          "Discussions"
+        ],
+        "summary": "🔒️ Create a Discussion",
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Discussion Created",
+            "schema": {
+              "$ref": "#/definitions/DiscussionResult"
+            }
+          },
+          "422": {
+            "description": "Invalid input"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -441,8 +511,8 @@
           "example": 10
         },
         "createdAt": {
-          "type": "number",
-          "example": 1657362669000
+          "type": "string",
+          "example": "2023-05-17 15:33:34"
         },
         "userId": {
           "type": "number",
